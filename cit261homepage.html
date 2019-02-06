@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css">
+  div#box1 {
+    background: #9DCEFF;
+    width: 400px;
+    height: 0px;
+    overflow: hidden;
+  }
+  </style>
+  <script>
+    function changeBG(el, clr){
+      var elem = document.getElementById(el);
+      // what you want to effect, how long you want it to take
+      elem.style.transition = "background 1.0s linear 0s";
+      elem.style.background = clr;
+    }
+    function fadeOut(el){
+      var elem = document.getElementById(el);
+      elem.style.transition = "opacity 1.0s linear 0s";
+      elem.style.opacity = 0;
+    }
+    function fadeIn(el){
+      var elem = document.getElementById(el);
+      elem.style.transition = "opacity 1.0s linear 0s";
+      elem.style.opacity = 1;
+    }
+    function slideOpen(el){
+      var elem = document.getElementById(el);
+      elem.style.transition = "height 1.0s linear 0s";
+      elem.style.height = "200px";
+    }
+    function slideClosed(el){
+      var elem = document.getElementById(el);
+      elem.style.transition = "height 0.5s linear 0s";
+      elem.style.height = "0px";
+    }
+  </script>
+</head>
+  <button onclick="changeBG('box1', '#F0F');"> Magenta :)</button><br>
+  <button onclick="changeBG('box1', '#0C0');"> Green :)</button><br>
+  <button onclick="changeBG('box1', '#9DCEFF');"> Original :)</button>
+  <button onclick="fadeOut('box1');"> Fade out :)</button>
+  <button onclick="fadeIn('box1',);"> Fade IN :)</button>
+  <button onclick="slideOpen('box1');"> Open :)</button>
+  <button onclick="slideClosed('box1');"> Close </button>
+  <div id="box1"> this is box1</div>
+</html>
