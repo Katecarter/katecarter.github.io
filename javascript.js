@@ -27,6 +27,40 @@ function week01loop(){
     document.getElementById("week1").textContent += (cats[i]+", ");
   }
 }
+//JAVASCROIPT WEEK2
+function objects(){
+  var thisObject = {
+    bird: "swan",
+    cat: "tiger",
+    dog: "dalmation",
+    animal: "zebra",
+    favorite: function(){
+      return this.cat + this.dog;
+    }
+  }
+  var birds = thisObject.bird.toUpperCase();
+  iInheritStuff(birds)
+}
+
+function iInheritStuff(what){
+
+}
+//JSON
+function json(){
+  var me = {
+    color: "yellow",
+    animal: "raccoon",
+    videoGame: "pokemon",
+    makeUp: "urbanDecay",
+  }
+  var favoritesStringify = JSON.stringify(me);
+  var favoritesParse = JSON.parse(favoritesStringify);
+
+  document.getElementById("stringify").textContent = favoritesStringify;
+  document.getElementById("parse").textContent = favoritesParse;
+}
+
+
 
 // Transitions with javascript
 function makeMeUgly(id, button2, button, clr){
@@ -55,7 +89,7 @@ function makeMePretty(){
   var button = document.getElementById('transitionButton');
   button.innerText = "Make me Ugly";
 }
-
+//WEEK 4
 function createDropdown(movies) {
   for (let movie of movies) {
     // let movieElement = document.createElement("option");
@@ -84,4 +118,28 @@ if (!movies) {
   request.send();
 } else {
   createDropdown(movies);
+}
+
+//WEEK 5 
+
+var xmlhttp = new XMLHttpRequest();
+var url = "churchOfDan.txt";
+
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var myArr = JSON.parse(this.responseText);
+    myFunction(myArr);
+  }
+};
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+function myFunction(arr) {
+  var out = "";
+  var i;
+  for(i = 0; i < arr.length; i++) {
+    out += '<a href="' + arr[i].url + '">' + 
+    arr[i].display + '</a><br>';
+  }
+  document.getElementById("id01").innerHTML = out;
 }
