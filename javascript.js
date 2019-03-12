@@ -141,5 +141,5 @@ function myFunction(arr) {
     out += '<a href="' + arr[i].url + '">' + 
     arr[i].display + '</a><br>';
   }
-  document.getElementById("id01").innerHTML = out;
+  document.getElementById("ajax").innerHTML = out;
 }
