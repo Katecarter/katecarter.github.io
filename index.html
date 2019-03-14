@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Kate's project</title>
+  <img onmouseover="theReactChurch()" src="dan.jpg" alt="Smiley face" height="150" width="200">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="style.css">
 </head>
@@ -24,6 +25,8 @@
 
     <div class="card">
       <h1>2. Javacript Objects</h1>
+      <div id="week2"></div>
+      <button onClick="objects()">Objects</button>
     </div>
 
     <div class="card">
@@ -51,22 +54,40 @@
 
     <div class="card">
       <h1>7. JavaScript Events</h1>
+      <button onClick="alert('Hello')">Click me.</button>
+      <img onmouseover="theReactChurch()" src="dan.jpg" alt="Smiley face" height="150" width="200">
+      <div onmouseover="alert('Hey you looked at me')">Hover over me</div>
     </div>
 
     <div class="card">
         <h1>8. HTML5 Tags</h1>
+        <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+          Your browser does not support the HTML5 canvas tag.
+          </canvas>
+          <video width="320" height="240" controls>
+            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+            <source src="movie.ogg" type="video/ogg">
+            Your browser does not support the video tag.
+          </video>
+          <audio controls>
+            <source src="https://freemusicgroup.com/mps/AuralNight_Jubilant.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio>
     </div>
 
     <div class="card">
         <h1>9. CSS3 Transitions</h1>
+        <div id="transition"></div>
     </div>
 
-    <div class="card">
+    <div class="card" id="transform">
         <h1>10. CSS3 Transforms</h1>
+        <div>Hover over me :)</div>
     </div>
 
     <div class="card">
         <h1>11. CSS3 Animations</h1>
+        <div id="animation"></div>
     </div>
   </div>
   <script src="javascript.js"></script>

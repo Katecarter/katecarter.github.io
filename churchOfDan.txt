@@ -1,6 +1,6 @@
 [
 {
 "display": "church of Dan",
-"url": "https://dan.church/"
+"url": "https://www.youtube.com/watch?v=vdrmJ0lc-sw"
 },
 ]
