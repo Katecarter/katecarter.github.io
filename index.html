@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Kate's project</title>
-  <img onmouseover="theReactChurch()" src="dan.jpg" alt="Smiley face" height="150" width="200">
+  <img src="dan.jpg" alt="Smiley face" height="150" width="200">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="style.css">
 </head>
@@ -17,10 +17,13 @@
         A button called 'For Loop' that goes through a for loop and displays all the values in the array.
         Then an assiciative array button which accesses all the values and displays them as a string.
       </div>
-      <div id="week1"></div>
-      <button onClick="week01()">Conditional</button>
+      <input type="text" id="week1Text" >
+      <button>clear</button>
+      <button onClick="week01()">add</button>
+      <ul id="week1List"></ul>
       <button onClick="week01loop()">For Loop</button>
       <button onClick="week01AA()">Associative Array</button>
+      <div id="week1"></div>
     </div>
 
     <div class="card">
@@ -60,7 +63,17 @@
     </div>
 
     <div class="card">
-        <h1>8. HTML5 Tags</h1>
+      <h1>8. DOM manipulation</h1>
+      <input type="text" id="myText" >
+      <button onClick="append()">add child</button>
+      <button onClick="remove()">remove child</button>
+      <ul id="myList">
+
+      </ul>
+    </div>
+
+    <div class="card">
+        <h1>9. HTML5 Tags</h1>
         <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
           Your browser does not support the HTML5 canvas tag.
           </canvas>
@@ -76,19 +89,24 @@
     </div>
 
     <div class="card">
-        <h1>9. CSS3 Transitions</h1>
+        <h1>10. CSS3 Transitions</h1>
         <div id="transition"></div>
     </div>
 
     <div class="card" id="transform">
-        <h1>10. CSS3 Transforms</h1>
+        <h1>11. CSS3 Transforms</h1>
         <div>Hover over me :)</div>
     </div>
 
     <div class="card">
-        <h1>11. CSS3 Animations</h1>
+        <h1>12. CSS3 Animations</h1>
         <div id="animation"></div>
     </div>
+
+    <div class="card">
+      <h1>13. Manipulating CSS Class Properties Using JavaScript</h1>
+      <div></div>
+  </div>
   </div>
   <script src="javascript.js"></script>
 </body>

@@ -1,12 +1,6 @@
-function theReactChurch(){
-  
-}
-
 function week01(){
-  var cats = ["Boomi", "Momo","Maverick", "Kate"];
-  document.getElementById("week1").textContent = cats[0];
-  
-  moreBasic(cats);
+  var text = document.getElementById("week1Text").value;
+  moreBasic(text);
 }
 
 function week01AA(){
@@ -18,13 +12,20 @@ function week01AA(){
   document.getElementById("week1").textContent = Mav.eyes + " " + Mav.hair + " " + Mav.height;
 }
 
-function moreBasic(cats){
-  if (cats){
-    document.getElementById("week1").textContent = cats[1];
+function moreBasic(text){
+  if (!text){
+    alert("im empty");
+  }
+  else{
+  var node = document.createElement("li");
+  var textnode = document.createTextNode(text);
+  document.getElementById("week1List").appendChild(node);
+  node.appendChild(textnode);
   }
 }
 
 function week01loop(){
+  document.getElementById("week1").textContent = "";
   var cats = ["Boomi", "Momo","Maverick", "Kate"];
   var i;
   for (i = 0; i < cats.length; i++){
@@ -111,7 +112,6 @@ if (!movies) {
     movies = JSON.parse(this.response);
     localStorage.setItem("movies", JSON.stringify(movies));
     createDropdown(movies);
-    
   }
   // Send request
   request.send();
@@ -119,6 +119,22 @@ if (!movies) {
   let localMovies = JSON.parse(movies);
   createDropdown(localMovies);
 }
+
+//DOM
+
+function remove(){
+  var list = document.getElementById("myList");
+  list.removeChild(list.childNodes[0]);
+}
+
+function append(){
+  var node = document.createElement("li");
+  var text = document.getElementById("myText").value;
+  var textnode = document.createTextNode(text);
+  node.appendChild(textnode);
+  document.getElementById("myList").appendChild(node);
+}
+
 
 // Transitions with javascript WEEK6
 function makeMeUgly(id, button2, button, clr){
@@ -148,11 +164,6 @@ function makeMePretty(){
   button.innerText = "Make me Ugly";
 }
 
-//WEEK7
-
-function week7(){
-
-}
 
 
 
