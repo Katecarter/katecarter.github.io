@@ -12,11 +12,6 @@
    
     <div class="card"> 
       <h1>1. JavaScript</h1>
-      <div>
-        We have a button that has an if statement called 'Conditional'
-        A button called 'For Loop' that goes through a for loop and displays all the values in the array.
-        Then an assiciative array button which accesses all the values and displays them as a string.
-      </div>
       <input type="text" id="week1Text" >
       <button>clear</button>
       <button onClick="week01()">add</button>
@@ -41,7 +36,7 @@
 
     <div class="card">
         <h1>4. AJAX</h1>
-        <div id="ajax"></div>
+        <select class="ajax"></select>
     </div>
 
     <div class="card">
@@ -58,7 +53,7 @@
     <div class="card">
       <h1>7. JavaScript Events</h1>
       <button onClick="alert('Hello')">Click me.</button>
-      <img onmouseover="theReactChurch()" src="dan.jpg" alt="Smiley face" height="150" width="200">
+      <img src="dan.jpg" alt="Smiley face" height="150" width="200">
       <div onmouseover="alert('Hey you looked at me')">Hover over me</div>
     </div>
 
@@ -105,7 +100,9 @@
 
     <div class="card">
       <h1>13. Manipulating CSS Class Properties Using JavaScript</h1>
-      <div></div>
+      <div id="colors" onmouseover="redNow()" style="width: 100px; height: 100px;">Hover or click buttons</div>
+      <button onClick="whiteNow()">white</button>
+      <button onClick="greenNow()">green</button>
   </div>
   </div>
   <script src="javascript.js"></script>

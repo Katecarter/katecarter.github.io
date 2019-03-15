@@ -66,29 +66,33 @@ function json(){
 }
 
 //WEEK 4
+function createDropdownAjax(descriptions) {
+  for (let movie of descriptions) {
+    let select = document.querySelector(".ajax");
+    select.options[select.options.length] = new Option(movie.description, movie.description);
+  }
+}
 
-// var xmlhttp = new XMLHttpRequest();
-// var url = "churchOfDan.txt";
+let descriptions = localStorage.getItem("descriptions");
+if (!descriptions) {
+  // Create a request variable and assign a new XMLHttpRequest object to it.
+  
+  var request = new XMLHttpRequest();
 
-// xmlhttp.onreadystatechange = function() {
-//   if (this.readyState == 4 && this.status == 200) {
-//     var myArr = JSON.parse(this.responseText);
-//     myFunction(myArr);
-//   }
-// };
-// xmlhttp.open("GET", url, true);
-// xmlhttp.send();
+  // Open a new connection, using the GET request on the URL endpoint
+  request.open('GET', 'https://ghibliapi.herokuapp.com/films', true);
 
-// function myFunction(arr) {
-//   var out = "";
-//   var i;
-//   for(i = 0; i < arr.length; i++) {
-//     out += '<a href="' + arr[i].url + '">' + 
-//     arr[i].display + '</a><br>';
-//   }
-//   document.getElementById("ajax").innerHTML = out;
-// }
-
+  request.onload = function () {
+    descriptions = JSON.parse(this.response);
+    localStorage.setItem("movies", JSON.stringify(descriptions));
+    createDropdownAjax(descriptions);
+  }
+  // Send request
+  request.send();
+} else {
+  let localMovies = JSON.parse(descriptions);
+  createDropdown(localMovies);
+}
 
 //WEEK 5
 function createDropdown(movies) {
@@ -162,6 +166,24 @@ function makeMePretty(){
 
   var button = document.getElementById('transitionButton');
   button.innerText = "Make me Ugly";
+}
+
+function redNow(){
+  var elem = document.getElementById('colors');
+  elem.style.transition = "background 1.0s linear 0s";
+  elem.style.background = 'red';
+}
+
+function whiteNow(){
+  var elem = document.getElementById('colors');
+  elem.style.transition = "background 1.0s linear 0s";
+  elem.style.background = 'white';
+}
+
+function greenNow(){
+  var elem = document.getElementById('colors');
+  elem.style.transition = "background 1.0s linear 0s";
+  elem.style.background = 'green';
 }
 
 
